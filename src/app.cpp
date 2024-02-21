@@ -4,6 +4,7 @@
 #include "SFML/Graphics/RenderWindow.hpp"
 #include "SFML/System/Vector2.hpp"
 #include "SFML/Window/Event.hpp"
+#include <string>
 
 /*
     Game
@@ -12,10 +13,16 @@ This class is responsible for
 */
 app::app() {
     // setting the default `sf::RenderWindow` options
-    window_mode_ = sf::VideoMode(window_size_.x, window_size_.y);
-    window_title_ = "My window";
-    window_.create(window_mode_, window_title_);
+    sf::Vector2u const window_size_ = {1080, 700};
+    sf::VideoMode window_mode = sf::VideoMode(window_size_.x, window_size_.y);
+    std::string window_title = "Fourmonics";
+
+    window_.create(window_mode, window_title);
     window_background_color_ = sf::Color::White;
+}
+
+app::~app() {
+
 }
 
 

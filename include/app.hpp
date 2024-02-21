@@ -8,6 +8,7 @@
 class app {
 public:
     app();
+    ~app();
 
     void run();
 
@@ -17,10 +18,8 @@ private:
     void handle_collisions();
     void draw();
 
-    sf::VideoMode window_mode_;
-    sf::String window_title_;
     sf::RenderWindow window_;
-    sf::Vector2u window_size_ = {800, 500};
+
     sf::Color window_background_color_;
 
     sf::Clock game_clock_;
